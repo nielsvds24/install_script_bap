@@ -7,11 +7,11 @@ sudo systemctl restart apache2
 sudo curl -o /var/www/html/latest.tar.gz https://wordpress.org/latest.tar.gz
 sudo tar -xvf /var/www/html/latest.tar.gz -C /var/www/html
 sudo rm /var/www/html/latest.tar.gz
-sudo mv install_script_bap/wp-config.php /var/www/html/wordpress/wp-config.php
+sudo cat install_script_bap/wp-config.php > /var/www/html/wordpress/wp-config.php
 sudo chown -R www-data:www-data /var/www/html/wordpress
 sudo find /var/www/html/wordpress/ -type d -exec chmod 750 {} \;
 sudo find /var/www/html/wordpress/ -type f -exec chmod 640 {} \;
-sudo rm -f /etc/apache2/sites-available/000-default.conf
+sudo rm /etc/apache2/sites-available/000-default.conf
 sudo mv install_script_bap/000-default.conf /etc/apache2/sites-available/000-default.conf
 sudo a2enmod rewrite
 sudo apache2ctl configtest
