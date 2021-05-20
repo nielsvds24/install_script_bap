@@ -5,7 +5,7 @@ sudo apt -y install apache2
 sudo apt -y install php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
 sudo systemctl restart apache2
 sudo curl -o /var/www/html/latest.tar.gz https://wordpress.org/latest.tar.gz
-sudo tar -xvf /var/www/html/latest.tar.gz
+sudo tar -xvf /var/www/html/latest.tar.gz -C /var/www/html
 sudo rm /var/www/html/latest.tar.gz
 sudo mv install_script_bap/wp-config.php /var/www/html/wordpress/wp-config.php
 sudo chown -R www-data:www-data /var/www/html/wordpress
