@@ -22,7 +22,7 @@ echo 'Check and restart apache'
 echo '---------------Check and restart apache2---------------' >> install.log
 sudo a2enmod rewrite >> install.log
 sudo apache2ctl configtest >> install.log
-sudo ystemctl restart apache2 >> install.log
+sudo systemctl restart apache2 >> install.log
 
 echo 'Done'
 echo 'Done' >> install.log
